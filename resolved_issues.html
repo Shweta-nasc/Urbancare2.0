@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>UrbanCare - Resolved Issues</title>
+    <link rel="stylesheet" href="resolved.css">
+</head>
+<body>
+    <header class="navbar">
+        <div class="container">
+            <div class="logo">UrbanCare Admin</div>
+            <nav class="nav-links">
+                <ul>
+                    <li><a href="index.html">Dashboard</a></li>
+                    <li><a href="pending_issues.html">Pending Issues</a></li>
+                    <li><a href="#" class="active-link">Resolved Issues</a></li>
+                    <li><a href="locations.html">Locations</a></li>
+                    <li><a href="reports.html">Reports</a></li>
+                </ul>
+            </nav>
+            <div class="user-actions">
+                <a href="#" class="icon-bell">🔔</a>
+                <a href="#" class="sign-in">Admin Name</a>
+                <button class="get-started">Logout</button>
+            </div>
+        </div>
+    </header>
+
+    <main class="resolved-page-content">
+        <div class="container">
+            <h2>🎉 Recently Resolved Community Issues</h2>
+            
+            <div class="resolution-filters">
+                <input type="text" placeholder="Search by ID or Keyword..." class="search-input">
+                <select>
+                    <option>Sort By: Resolution Date (Newest)</option>
+                    <option>Sort By: Department</option>
+                    <option>Sort By: Location</option>
+                </select>
+            </div>
+
+            <div class="resolved-issue-card">
+                <div class="issue-details-summary">
+                    <h3>Pothole Repaired on Outer Ring Road</h3>
+                    <p class="resolution-meta">
+                        <span class="location">📍 Location: Whitefield, Bangalore</span> | 
+                        <span class="resolved-date">✅ Resolved On: 2025-10-25</span> | 
+                        <span class="department">🛠️ Dept: Public Works</span>
+                    </p>
+                    <p class="description">The hazardous cluster of potholes was successfully patched and resurfaced, ensuring smoother traffic flow and safety for commuters.</p>
+                </div>
+                
+                <div class="issue-images-container">
+                    <div class="image-box before">
+                        <h4>Before</h4>
+                        <div class="image-placeholder" style="background-image: url('https://source.unsplash.com/150x100/?pothole,road-damage');"></div>
+                    </div>
+                    <div class="image-box after">
+                        <h4>After</h4>
+                        <div class="image-placeholder" style="background-image: url('https://source.unsplash.com/150x100/?road-repair,new-asphalt');"></div>
+                    </div>
+                </div>
+                
+                <div class="resolution-actions">
+                    <button class="btn green-btn">View Full Report</button>
+                    <button class="btn blue-btn">Share Success Story</button>
+                </div>
+            </div>
+
+            <div class="resolved-issue-card">
+                <div class="issue-details-summary">
+                    <h3>Streetlight Restored in Worli Sea Link Area</h3>
+                    <p class="resolution-meta">
+                        <span class="location">📍 Location: Bandra, Mumbai</span> | 
+                        <span class="resolved-date">✅ Resolved On: 2025-10-23</span> | 
+                        <span class="department">💡 Dept: Electrical Division</span>
+                    </p>
+                    <p class="description">The persistent flickering streetlight that compromised nighttime visibility has been fully replaced with a new, energy-efficient LED unit.</p>
+                </div>
+                
+                <div class="issue-images-container">
+                    <div class="image-box before">
+                        <h4>Before</h4>
+                        <div class="image-placeholder" style="background-image: url('https://source.unsplash.com/150x100/?broken-streetlight,night');"></div>
+                    </div>
+                    <div class="image-box after">
+                        <h4>After</h4>
+                        <div class="image-placeholder" style="background-image: url('https://source.unsplash.com/150x100/?new-streetlight,bright-street');"></div>
+                    </div>
+                </div>
+                
+                <div class="resolution-actions">
+                    <button class="btn green-btn">View Full Report</button>
+                    <button class="btn blue-btn">Share Success Story</button>
+                </div>
+            </div>
+            
+        </div>
+    </main>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2023 UrbanCare. All rights reserved.</p>
+        </div>
+    </footer>
+</body>
+</html>
