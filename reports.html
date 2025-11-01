@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>UrbanCare - Reports & Announcements</title>
+    <link rel="stylesheet" href="reports.css">
+</head>
+<body>
+    <header class="navbar">
+        <div class="container">
+            <div class="logo">UrbanCare Admin</div>
+            <nav class="nav-links">
+                <ul>
+                    <li><a href="index.html">Dashboard</a></li>
+                    <li><a href="pending_issues.html">Pending Issues</a></li>
+                    <li><a href="resolved_issues.html">Resolved Issues</a></li>
+                    <li><a href="locations.html">Locations</a></li>
+                    <li><a href="reports.html" class="active-link">Reports</a></li>
+                </ul>
+            </nav>
+            <div class="user-actions">
+                <a href="#" class="icon-bell">🔔</a>
+                <a href="#" class="sign-in">Admin Name</a>
+                <button class="get-started">Logout</button>
+            </div>
+        </div>
+    </header>
+
+    <main class="reports-page-content">
+        <div class="container">
+            
+            <div class="reports-grid">
+                
+                <div class="analytics-column">
+                    <h2>📈 Generate Analytics Reports</h2>
+                    
+                    <div class="report-controls">
+                        <select id="report-type">
+                            <option value="resolution-time">Resolution Time Metrics</option>
+                            <option value="top-issues">Top Reported Issues (By Upvotes)</option>
+                            <option value="department-load">Department Workload</option>
+                            <option value="location-density">Issue Density by Location</option>
+                        </select>
+                        
+                        <input type="date" id="start-date" value="2025-01-01">
+                        <input type="date" id="end-date" value="2025-10-30">
+                        
+                        <button class="btn primary-btn" id="generate-report">Generate Report</button>
+                        <button class="btn secondary-btn" id="export-report">Export CSV</button>
+                    </div>
+
+                    <div class="report-viewer">
+                        <h3>Report Output: Resolution Time Metrics (Jan - Oct 2025)</h3>
+                        
+                        <div class="report-summary-panel">
+                            <p><strong>Total Issues Closed:</strong> 1,200</p>
+                            <p><strong>Average Resolution Time:</strong> 3.5 Days</p>
+                            <p><strong>Most Efficient Department:</strong> Electrical Division</p>
+                        </div>
+                        
+                        <div class="chart-placeholder">
+                            [Placeholder for dynamic charts/tables]
+                            <p>Analytics will be displayed here upon generation.</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="announcements-column">
+                    <h2>📢 Post Public Notices & Warnings</h2>
+                    
+                    <form id="announcement-form" class="announcement-form">
+                        <select id="announcement-type" required>
+                            <option value="announcement">Public Announcement</option>
+                            <option value="warning">⚠️ Warning (Public Safety)</option>
+                            <option value="rule">📋 Civic Rule / Awareness</option>
+                            <option value="fine">🚫 Fine/Violation Notice</option>
+                        </select>
+                        <input type="text" id="announcement-title" placeholder="Title/Subject (e.g., Water Use Restriction)" required>
+                        <textarea id="announcement-body" placeholder="Enter full details, rules, warnings, or fine amount/code..." required></textarea>
+                        
+                        <div class="fine-details" style="display:none;">
+                            <input type="number" id="fine-amount" placeholder="Fine Amount (₹)">
+                            <input type="text" id="fine-code" placeholder="Violation Code/Rule">
+                        </div>
+                        
+                        <button type="submit" class="btn primary-btn">Post Announcement</button>
+                    </form>
+
+                    <div id="posted-announcements" class="posted-announcements">
+                        <h3>Recently Posted</h3>
+                        <div class="announcement warning">
+                            <h4>⚠️ WARNING: Heavy Fines for Illegal Dumping!</h4>
+                            <p>Violation of the Solid Waste Management rules will result in a fine of ₹5,000. Report any violations immediately.</p>
+                            <span class="post-meta">Posted: Just now</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+        </div>
+    </main>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2023 UrbanCare. All rights reserved.</p>
+        </div>
+    </footer>
+    
+    <script src="reports.js"></script>
+</body>
+</html>
