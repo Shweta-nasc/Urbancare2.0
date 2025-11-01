@@ -1,0 +1,85 @@
+/* General Layout & Background (Pending Issues) */
+* { margin: 0; padding: 0; box-sizing: border-box; }
+body {
+    font-family: 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+    line-height: 1.6;
+    background-color: #0d1a26;
+    background-image: url('https://source.unsplash.com/1600x900/?indian-city,roadwork,alert');
+    background-size: cover; background-position: center; background-attachment: fixed;
+    color: #333;
+}
+.container { width: 90%; max-width: 1300px; margin: 0 auto; }
+
+/* Navbar (reused dark style) */
+.navbar { background-color: rgba(20, 40, 60, 0.95); padding: 1rem 0; box-shadow: 0 4px 8px rgba(0,0,0,0.4); position: sticky; top: 0; z-index: 1000; }
+.navbar .container { display: flex; justify-content: space-between; align-items: center; }
+.logo { font-size: 1.8rem; font-weight: 700; color: #fff; }
+.nav-links ul { list-style: none; display: flex; }
+.nav-links ul li a { color: #ccc; text-decoration: none; font-weight: 500; padding: 5px 15px; transition: color 0.3s, border-bottom 0.3s; }
+.nav-links ul li a:hover, .nav-links ul li a.active-link { color: #ffc107; border-bottom: 3px solid #ffc107; } /* Yellow for Pending emphasis */
+.icon-bell { font-size: 1.2rem; color: #ffc107; margin-right: 15px; text-decoration: none; }
+.sign-in { color: #fff; margin-right: 15px; font-weight: 500; text-decoration: none; }
+.get-started { background-color: #dc3545; color: #fff; padding: 8px 18px; border-radius: 5px; border: none; cursor: pointer; }
+
+/* Main Pending Page Layout */
+.pending-page-content { background-color: rgba(255, 255, 255, 0.95); padding: 40px 0; color: #333; min-height: calc(100vh - 120px); }
+.pending-page-content h2 { color: #dc3545; margin-bottom: 30px; text-align: center; font-size: 2rem; }
+.issue-grid { display: grid; grid-template-columns: 2fr 3fr; gap: 30px; }
+.issue-list-column { padding-right: 15px; border-right: 1px solid #eee; }
+.list-header { display: flex; gap: 10px; margin-bottom: 20px; }
+.list-header input, .list-header select { padding: 8px; border: 1px solid #ccc; border-radius: 5px; flex-grow: 1; }
+
+/* Issue Card (List) Styling - With Image */
+.priority-issue-card {
+    display: flex; background-color: #fff; border-left: 5px solid; padding: 10px; margin-bottom: 15px;
+    border-radius: 6px; box-shadow: 0 2px 5px rgba(0,0,0,0.1); cursor: pointer; transition: transform 0.2s, box-shadow 0.2s;
+    overflow: hidden;
+}
+.priority-issue-card:hover { transform: translateY(-2px); box-shadow: 0 4px 10px rgba(0,0,0,0.2); }
+.issue-image-wrapper { flex-shrink: 0; width: 100px; height: 80px; margin-right: 10px; border-radius: 4px; overflow: hidden; }
+.issue-image-placeholder { width: 100%; height: 100%; background-color: #f0f0f0; background-size: cover; background-position: center; }
+.issue-text-content { flex-grow: 1; position: relative; }
+.high-priority { border-left-color: #dc3545; } 
+.medium-priority { border-left-color: #ffc107; } 
+.low-priority { border-left-color: #17a2b8; }
+.issue-text-content h4 { margin-bottom: 5px; font-size: 1.1rem; }
+.issue-meta { font-size: 0.85rem; color: #666; margin-bottom: 8px; }
+
+/* NEW STYLE FOR BUTTONS AND MOVED BADGE */
+.issue-actions-row {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    margin-top: 5px; 
+}
+.votes-badge { 
+    /* Removed absolute positioning */
+    background-color: #007bff; 
+    color: #fff; 
+    padding: 4px 8px; 
+    border-radius: 5px; 
+    font-weight: bold; 
+    font-size: 0.9rem; 
+    white-space: nowrap; /* Keep votes badge compact */
+}
+/* END NEW STYLE */
+
+.btn { padding: 5px 12px; font-size: 0.85rem; border-radius: 4px; border: none; cursor: pointer; transition: background-color 0.2s; }
+.resolve-btn { background-color: #28a745; color: #fff; }
+.view-map-btn { background-color: #6c757d; color: #fff; }
+
+/* Issue Details Column (Right Side) */
+.issue-details-column { padding: 20px; background-color: #f5f5f5; border-radius: 8px; box-shadow: inset 0 0 10px rgba(0,0,0,0.05); }
+.issue-details-column h3 { margin-bottom: 15px; color: #004d99; }
+#detail-map { margin-top: 15px; border: 1px solid #ddd; border-radius: 6px; }
+.details-panel { margin-top: 20px; padding: 15px; border: 1px solid #ccc; border-radius: 6px; background-color: #fff; }
+.detail-status { color: #dc3545; font-weight: 600; margin-bottom: 10px; font-size: 0.95rem; }
+.comments-section { margin-top: 15px; border-top: 1px dashed #ddd; padding-top: 10px; }
+.comment { background-color: #f0f8ff; padding: 8px; border-radius: 4px; margin-bottom: 5px; border-left: 3px solid #007bff; font-size: 0.9rem; }
+.user-comment { background-color: #fff; border-left: 3px solid #6c757d; }
+#comment-form { display: block; }
+#comment-form textarea { width: 100%; min-height: 80px; padding: 10px; border: 1px solid #ccc; border-radius: 5px; margin-top: 10px; }
+#post-comment-btn { background-color: #007bff; color: #fff; width: 100%; margin-top: 10px; }
+
+/* Footer */
+footer { background-color: rgba(20, 40, 60, 0.95); color: #ccc; text-align: center; padding: 20px 0; }
