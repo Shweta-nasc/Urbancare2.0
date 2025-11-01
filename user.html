@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>UrbanCare - Report & Track Community Issues</title> 
+    <link rel="stylesheet" href="dashboard.css"> 
+</head>
+<body>
+    <header class="navbar">
+        <div class="container">
+            <div class="logo">UrbanCare</div> <nav class="nav-links">
+                <ul>
+                    <li><a href="index.html" class="active-link">Home</a></li>
+                    <li><a href="login.html">Report Issue</a></li> 
+                    <li><a href="login.html">Track Status</a></li>
+                    <li><a href="login.html">Explore Data</a></li>
+                    <li><a href="login.html">Join Initiative</a></li>
+                </ul>
+            </nav>
+            <div class="user-actions">
+                <a href="login.html" class="icon-bell">🔔</a> 
+                <a href="login.html" class="sign-in">Sign In</a>
+                <button class="get-started" onclick="window.location.href='register.html'">Register</button>
+            </div>
+        </div>
+    </header>
+
+    <main class="hero-section">
+        <div class="container">
+            <h1>Your Voice Matters: Improve Your Community</h1>
+            <p>Easily report, monitor, and resolve urban issues in your neighborhood.</p>
+            <div class="cta-buttons">
+                <a href="login.html" class="btn primary-btn">Report a New Issue <span class="arrow">&rarr;</span></a>
+                <a href="login.html" class="btn secondary-btn">Track My Issue Status</a>
+            </div>
+            <div class="stats-overview">
+                <div class="stat-card">
+                    <h3 id="total-reports-count">1450</h3>
+                    <p>Total Issues Reported</p>
+                </div>
+                <div class="stat-card">
+                    <h3 id="resolved-count">1200</h3>
+                    <p>Issues Resolved to Date</p>
+                </div>
+                <div class="stat-card">
+                    <h3 id="active-users-count">30k+</h3>
+                    <p>Active Citizens</p>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <section class="impact showcase">
+        <div class="container">
+            <h2 class="animate-on-scroll fade-in-up">Explore Our Impact</h2>
+            <p class="animate-on-scroll fade-in-up delay-1">See how UrbanCare is transforming communities through citizen action.</p>
+
+            <div class="animated-grid">
+                <div class="hh2">
+                    <img src="static/cleanpark.png" alt="Clean City Park">
+                    <div class="box-overlay">
+                        <h3>Clean Parks Initiative</h3>
+                        <p>Our efforts resulted in 20+ revitalized parks.</p>
+                    </div>
+                </div>
+                <div class="hh2">
+                    <img src="static/pothholeredemption.png" alt="Street Repair">
+                    <div class="box-overlay">
+                        <h3>Pothole Remediation</h3>
+                        <p>Over 1000 potholes fixed across the city.</p>
+                    </div>
+                </div>
+                <div class="hh2">
+                    <img src="static/greencity.png" alt="Community Tree Planting">
+                    <div class="box-overlay">
+                        <h3>Green City Project</h3>
+                        <p>Engaging citizens in tree planting for a greener tomorrow.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <footer>
+        <div class="container">
+            <p>&copy; 2023 UrbanCare. All rights reserved. | <a href="login.html">Log In</a></p>
+        </div>
+    </footer>
+
+    <script src="dashboard.js"></script> 
+</body>
+</html>
