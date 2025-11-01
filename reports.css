@@ -1,0 +1,96 @@
+/* General Layout & Background (Reports) */
+* { margin: 0; padding: 0; box-sizing: border-box; }
+body {
+    font-family: 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+    line-height: 1.6;
+    background-color: #f7f7f7;
+    color: #333;
+}
+.container { width: 90%; max-width: 1300px; margin: 0 auto; }
+
+/* Navbar (Standard Admin Style) */
+.navbar { background-color: rgba(20, 40, 60, 0.95); padding: 1rem 0; box-shadow: 0 4px 8px rgba(0,0,0,0.4); position: sticky; top: 0; z-index: 1000; }
+.navbar .container { display: flex; justify-content: space-between; align-items: center; }
+.logo { font-size: 1.8rem; font-weight: 700; color: #fff; }
+.nav-links ul { list-style: none; display: flex; }
+.nav-links ul li a { color: #ccc; text-decoration: none; font-weight: 500; padding: 5px 15px; transition: color 0.3s, border-bottom 0.3s; }
+.nav-links ul li a:hover, .nav-links ul li a.active-link { color: #38c172; border-bottom: 3px solid #38c172; } 
+.icon-bell { font-size: 1.2rem; color: #ffc107; margin-right: 15px; text-decoration: none; }
+.sign-in { color: #fff; margin-right: 15px; font-weight: 500; text-decoration: none; }
+.get-started { background-color: #dc3545; color: #fff; padding: 8px 18px; border-radius: 5px; border: none; cursor: pointer; }
+
+/* Main Content Layout */
+.reports-page-content { padding: 40px 0; background-color: #fff; box-shadow: 0 0 20px rgba(0,0,0,0.1); }
+.reports-page-content h2 { text-align: center; color: #38c172; margin-bottom: 30px; }
+
+/* Two Column Grid */
+.reports-grid {
+    display: grid;
+    grid-template-columns: 3fr 2fr; /* Analytics wider than Announcements */
+    gap: 30px;
+}
+.analytics-column, .announcements-column {
+    padding: 20px;
+    background-color: #f9f9f9;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+}
+
+/* Analytics & Reports Section */
+.report-controls { 
+    display: flex; 
+    flex-wrap: wrap;
+    gap: 10px; 
+    margin-bottom: 20px; 
+    padding: 10px;
+    background-color: #e6f0ff; /* Light blue background */
+    border-radius: 6px;
+}
+.report-controls select, .report-controls input, .report-controls button {
+    padding: 8px 12px;
+    border-radius: 5px;
+    font-size: 0.95rem;
+    border: 1px solid #ccc;
+}
+.report-controls button { cursor: pointer; }
+.report-viewer { margin-top: 20px; }
+.report-summary-panel {
+    display: flex;
+    justify-content: space-around;
+    padding: 15px;
+    background-color: #fff;
+    border: 1px solid #eee;
+    border-radius: 6px;
+    margin-bottom: 20px;
+}
+.report-summary-panel strong { color: #007bff; }
+.chart-placeholder {
+    height: 300px;
+    background-color: #eee;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    border: 1px dashed #aaa;
+    border-radius: 6px;
+}
+
+/* Announcements Section */
+.announcements-column h2 { color: #dc3545; }
+.announcement-form { padding: 15px; background-color: #f0f8ff; border-radius: 8px; margin-bottom: 20px; }
+.announcement-form select, .announcement-form input, .announcement-form textarea {
+    width: 100%; margin-bottom: 10px; padding: 10px; border: 1px solid #ccc; border-radius: 5px; box-sizing: border-box;
+}
+.fine-details { display: flex; gap: 10px; }
+.posted-announcements { margin-top: 15px; }
+
+/* Announcement Types Styling */
+.announcement { padding: 10px; border-radius: 6px; margin-bottom: 10px; border-left: 5px solid; }
+.announcement h4 { margin-bottom: 5px; font-size: 1.1rem; }
+.announcement.warning { background-color: #fff3cd; border-left-color: #ffc107; }
+.announcement.fine { background-color: #f8d7da; border-left-color: #dc3545; }
+.announcement.rule { background-color: #e2eebc; border-left-color: #79a600; } /* Awareness Green/Olive */
+.announcement.announcement { background-color: #e2e3e5; border-left-color: #6c757d; }
+
+/* Footer */
+footer { background-color: rgba(20, 40, 60, 0.95); color: #ccc; text-align: center; padding: 20px 0; }
