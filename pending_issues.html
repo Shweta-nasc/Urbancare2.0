@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>UrbanCare - Pending Issues</title>
+    <link rel="stylesheet" href="pending.css">
+    
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"
+     integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY="
+     crossorigin=""/>
+</head>
+<body>
+    <header class="navbar">
+        <div class="container">
+            <div class="logo">UrbanCare Admin</div>
+            <nav class="nav-links">
+                <ul>
+                    <li><a href="index.html">Dashboard</a></li>
+                    <li><a href="pending_issues.html" class="active-link">Pending Issues</a></li>
+                    <li><a href="resolved_issues.html">Resolved Issues</a></li>
+                    <li><a href="locations.html">Locations</a></li>
+                    <li><a href="reports.html">Reports</a></li>
+                </ul>
+            </nav>
+            <div class="user-actions">
+                <a href="#" class="icon-bell">🔔</a>
+                <a href="#" class="sign-in">Admin Name</a>
+                <button class="get-started">Logout</button>
+            </div>
+        </div>
+    </header>
+
+    <main class="pending-page-content">
+        <div class="container">
+            <h2>🚨 Top Priority Issues (Sorted by Upvotes)</h2>
+            <div class="issue-grid">
+                
+                <div class="issue-list-column">
+                    <div class="list-header">
+                        <input type="text" placeholder="Search by ID or Keyword..." class="search-input">
+                        <select id="sort-filter">
+                            <option value="votes">Sort By: Upvotes (High)</option>
+                            <option value="date">Sort By: Date (Newest)</option>
+                        </select>
+                    </div>
+
+                    <div class="priority-issue-card high-priority" data-lat="28.6139" data-lng="77.2090" data-issue-id="I001">
+                        <div class="issue-image-wrapper">
+                            <div class="issue-image-placeholder" style="background-image: url('static/broken_pipe.jpg');"></div>
+                        </div>
+                        <div class="issue-text-content">
+                            <h4>Critical Water Pipeline Burst - Connaught Place</h4>
+                            <p class="issue-meta">Location: Radial Road 2, New Delhi | Reported: 2h ago</p>
+                            <div class="issue-actions-row"> <button class="btn resolve-btn" data-action="assign">Assign Task</button>
+                                <button class="btn view-map-btn" data-action="map">View Map</button>
+                                <div class="votes-badge">⬆️ 1,250</div> </div>
+                        </div>
+                    </div>
+
+                    <div class="priority-issue-card medium-priority" data-lat="19.0760" data-lng="72.8777" data-issue-id="I002">
+                        <div class="issue-image-wrapper">
+                            <div class="issue-image-placeholder" style="background-image: url('static/broken_headlight.jpg');"></div>
+                        </div>
+                        <div class="issue-text-content">
+                            <h4>Broken Traffic Signal - Bandra Kurla Complex (BKC)</h4>
+                            <p class="issue-meta">Location: Near Jio World Centre, Mumbai | Reported: 1 day ago</p>
+                            <div class="issue-actions-row">
+                                <button class="btn resolve-btn" data-action="assign">Assign Task</button>
+                                <button class="btn view-map-btn" data-action="map">View Map</button>
+                                <div class="votes-badge">⬆️ 480</div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="priority-issue-card low-priority" data-lat="12.9716" data-lng="77.5946" data-issue-id="I003">
+                        <div class="issue-image-wrapper">
+                            <div class="issue-image-placeholder" style="background-image: url('static/illegaldumping.jpg');"></div>
+                        </div>
+                        <div class="issue-text-content">
+                            <h4>Illegal Dumping near Lalbagh Garden</h4>
+                            <p class="issue-meta">Location: Sudhama Nagar, Bangalore | Reported: 5 days ago</p>
+                            <div class="issue-actions-row">
+                                <button class="btn resolve-btn" data-action="assign">Assign Task</button>
+                                <button class="btn view-map-btn" data-action="map">View Map</button>
+                                <div class="votes-badge">⬆️ 85</div>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+
+                <div class="issue-details-column">
+                    <h3>Issue Details & Map View</h3>
+                    <div id="detail-map" style="height: 350px; width: 100%;"></div>
+                    
+                    <div class="details-panel">
+                        <div id="detail-content-placeholder">
+                            <h4>Critical Water Pipeline Burst - Connaught Place</h4>
+                            <p class="detail-status">Status: Pending | **Priority: High**</p>
+                            <p>A major water pipeline burst near the Outer Circle is flooding the road and causing major traffic disruption. The area needs immediate blockage and repair.</p>
+                            
+                            <div class="comments-section">
+                                <h5>💬 Comments (48)</h5>
+                                <div class="comment">
+                                    <strong>Delhi Jal Board:</strong> Initial assessment complete. Repair team dispatched immediately. ETA 30 mins.
+                                </div>
+                                <div class="comment user-comment">
+                                    <strong>Resident (Ravi S.):</strong> The water is knee-deep near the metro entrance! Please hurry.
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <form id="comment-form">
+                            <textarea id="comment-text" placeholder="Add internal admin comment..."></textarea>
+                            <button type="submit" class="btn primary-btn" id="post-comment-btn" style="width: 100%; margin-top: 10px;">Post Comment & Update Status</button>
+                        </form>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </main>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2025 UrbanCare. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"
+     integrity="sha256-20n6a32H62+4wI4sXhQd9hYf8u8e34B7yT8tXqjD4p4="
+     crossorigin=""></script>
+    <script src="pending.js"></script>
+</body>
+</html>
