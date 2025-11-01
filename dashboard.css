@@ -1,0 +1,220 @@
+
+* { margin: 0; padding: 0; box-sizing: border-box; }
+body {
+    font-family: 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+    line-height: 1.6;
+    background-color: #0d1a26; /* Dark background color if image isn't available */
+    background-image: url('static/urban.jpeg'); /* Example image, replace with yours */
+    background-size: cover;       /* Ensure the image covers the entire viewport */
+    background-position: center;  /* Center the image */
+    background-attachment: fixed; /* Keep the image fixed when scrolling */
+    color: #333;
+    min-height: 100vh; /* Ensure body takes full height for background to cover */
+}
+.container { width: 90%; max-width: 1300px; margin: 0 auto; }
+
+/* Navbar - Dark, Semi-Transparent Blue */
+.navbar { background-color: rgba(20, 40, 60, 0.95); padding: 1rem 0; box-shadow: 0 4px 8px rgba(0,0,0,0.4); position: sticky; top: 0; z-index: 1000; }
+.navbar .container { display: flex; justify-content: space-between; align-items: center; }
+.logo { font-size: 1.8rem; font-weight: 700; color: #fff; }
+.nav-links ul { list-style: none; display: flex; }
+.nav-links ul li a { color: #ccc; text-decoration: none; font-weight: 500; padding: 5px 15px; transition: color 0.3s, border-bottom 0.3s; }
+.nav-links ul li a:hover, .nav-links ul li a.active-link { color: #8cafff; border-bottom: 3px solid #8cafff; }
+.icon-bell { font-size: 1.2rem; color: #ffc107; margin-right: 15px; text-decoration: none; }
+.sign-in { color: #fff; margin-right: 15px; font-weight: 500; text-decoration: none; }
+.get-started { background-color: #dc3545; color: #fff; padding: 8px 18px; border-radius: 5px; border: none; cursor: pointer; }
+
+/* Hero Section - Dark Overlay and prominent text */
+/* --- MODIFICATIONS HERE --- */
+.hero-section { 
+    background-color: rgba(13, 12, 12, 0.75); /* Slightly more opaque background */
+    padding: 50px 30px; /* Reduced top/bottom padding slightly, added side padding */
+    text-align: center; 
+    color: #fff; 
+    margin: 40px auto; /* Centered horizontally, clear margin from navbar */
+    max-width: 900px; /* Make it less wide (boxed out) */
+    width: 90%; /* Responsive width */
+    border-radius: 12px; /* Rounded corners for the box effect */
+    box-shadow: 0 8px 25px rgba(0,0,0,0.6); /* More prominent shadow for depth */
+    border: 1px solid rgba(255, 255, 255, 0.1); /* Subtle border */
+}
+.hero-section h1 { font-size: 2.8rem; margin-bottom: 15px; color: #8cafff; text-shadow: 1px 1px 3px rgba(0,0,0,0.8); }
+.hero-section p { font-size: 1.1rem; margin-bottom: 30px; } /* Added margin for paragraph */
+/* --- END MODIFICATIONS --- */
+
+
+/* Buttons */
+.cta-buttons { display: flex; justify-content: center; gap: 20px; margin-bottom: 50px; }
+.btn { padding: 12px 25px; border-radius: 8px; text-decoration: none; font-weight: bold; font-size: 1.1rem; cursor: pointer; border: 2px solid; display: inline-flex; align-items: center; gap: 8px; transition: all 0.3s ease; }
+.primary-btn { background-color: #007bff; color: #fff; border-color: #007bff; }
+.primary-btn:hover { background-color: #0056b3; border-color: #0056b3; }
+.secondary-btn { background-color: transparent; color: #007bff; border-color: #007bff; }
+.secondary-btn:hover { background-color: #007bff; color: #fff; }
+
+/* Stats Overview - Frosted Glass Effect */
+.stats-overview { 
+    display: flex; 
+    justify-content: center; 
+    gap: 30px; 
+    margin-top: 30px; 
+} 
+
+.stat-card { 
+    background-color: rgba(255, 255, 255, 0.15); 
+    backdrop-filter: blur(5px); 
+    padding: 20px 30px; 
+    border-radius: 10px; 
+    box-shadow: 0 4px 15px rgba(0,0,0,0.3); 
+    text-align: center; 
+    min-width: 220px; 
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    transition: all 0.3s ease;
+    cursor: pointer;
+    position: relative;
+    overflow: hidden;
+}
+
+.stat-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 8px 25px rgba(0,0,0,0.5);
+    background-color: rgba(255, 255, 255, 0.25);
+    border-color: rgba(255, 255, 255, 0.4);
+}
+
+.stat-card::before {
+    content: '';
+    position: absolute;
+    top: -100%;
+    left: -100%;
+    width: 300%;
+    height: 300%;
+    background: linear-gradient(
+        45deg,
+        transparent,
+        rgba(255, 255, 255, 0.1),
+        transparent
+    );
+    transition: all 0.6s ease;
+}
+
+.stat-card:hover::before {
+    top: 100%;
+    left: 100%;
+}
+
+.stat-card h3 { 
+    font-size: 2.8rem; 
+    color: #ffc107; 
+    margin-bottom: 5px;
+    transition: all 0.3s ease;
+}
+
+.stat-card:hover h3 {
+    transform: scale(1.1);
+    color: #ffdd57;
+    text-shadow: 0 0 15px rgba(255, 193, 7, 0.5);
+}
+
+
+/* Featured Issues & Map - Semi-Opaque White Panel */
+.featured-issues { 
+    padding: 40px 0; 
+    background-color: rgba(13, 12, 12, 0.75);  /* Slightly less opaque white for clarity */
+    color: #333; 
+    border-radius: 10px; 
+    box-shadow: 0 0 20px rgba(255, 255, 255, 0.15); /* Slightly stronger shadow */
+    margin-bottom: 40px; /* Space before footer */
+}
+.featured-issues h2 { text-align: center; font-size: 2rem; margin-bottom: 20px; color: #000000; }
+.location-filters { display: flex; justify-content: center; gap: 15px; margin-bottom: 30px; }
+.filter-btn { background-color: #28a745; color: #fff; border: none; padding: 10px 20px; border-radius: 5px; }
+.map-section { margin: 30px auto; max-width: 95%; padding: 20px; border: 1px solid #ddd; border-radius: 8px; background-color: #f9f9f9; }
+#mapid { border: 2px solid #007bff; border-radius: 6px; }
+
+/* Issue List */
+.issue-list { display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 25px; margin-top: 20px; padding: 0 20px;}
+.issue-card { background-color: #171616; padding: 20px; border-radius: 8px; box-shadow: 0 2px 10px rgba(0,0,0,0.1); border-left: 5px solid; }
+.issue-card.pending { border-left-color: #ffc107; border: 1px solid #ffc107; } /* Yellow border for pending */
+.issue-card.resolved { border-left-color: #28a745; border: 1px solid #28a745; } /* Green border for resolved */
+.issue-card .resolve-btn { background-color: #28a745; color: #fff; margin-right: 10px; padding: 8px 15px; border:none; }
+.issue-card .view-details { background-color: #6c757d; color: #fff; padding: 8px 15px; border:none;}
+.view-all { text-align: right; margin-top: 20px; padding-right: 20px; }
+.impact.showcase {
+    background-color: rgba(0, 0, 0, 0.652);
+    padding: 40px 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 20px rgba(255, 253, 253, 0.1);
+    margin-bottom: 40px;
+    color:#8ac7f0
+}
+.animated-grid {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    flex-wrap: nowrap;
+    gap: 15px;
+    padding: 15px;
+}
+.hh2 {
+    flex: 0 1 250px;
+    border-radius: 8px;
+    box-shadow: 0 8px 25px rgba(0,0,0,0.6);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    overflow: hidden;
+    position: relative;
+    cursor: pointer;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.hh2:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 12px 30px rgba(0,0,0,0.8);
+}
+
+.hh2 img {
+    width: 250px;
+    height: 150px;
+    object-fit: cover;
+    transition: transform 0.3s ease;
+}
+
+.hh2:hover img {
+    transform: scale(1.1);
+}
+
+.box-overlay {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: rgba(0, 0, 0, 0.8);
+    padding: 15px;
+    transform: translateY(100%);
+    transition: transform 0.3s ease;
+}
+
+.hh2:hover .box-overlay {
+    transform: translateY(0);
+}
+
+.box-overlay h3 {
+    font-size: 1.1rem;
+    margin-bottom: 5px;
+    color: #fff;
+}
+
+.box-overlay p {
+    font-size: 0.9rem;
+    color: #8ac7f0;
+    margin: 0;
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 0.3s ease, transform 0.3s ease;
+}
+
+.hh2:hover .box-overlay p {
+    opacity: 1;
+    transform: translateY(0);
+}
+/* Footer */
+footer { background-color: rgba(20, 40, 60, 0.95); color: #ccc; text-align: center; padding: 20px 0; margin-top: 0; }
