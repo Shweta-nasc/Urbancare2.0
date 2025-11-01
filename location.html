@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>UrbanCare - Geospatial View</title>
+    <link rel="stylesheet" href="locations.css">
+    
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"
+     integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY="
+     crossorigin=""/>
+</head>
+<body>
+    <header class="navbar">
+        <div class="container">
+            <div class="logo">UrbanCare Admin</div>
+            <nav class="nav-links">
+                <ul>
+                    <li><a href="index.html">Dashboard</a></li>
+                    <li><a href="pending_issues.html">Pending Issues</a></li>
+                    <li><a href="resolved_issues.html">Resolved Issues</a></li>
+                    <li><a href="locations.html" class="active-link">Locations</a></li>
+                    <li><a href="reports.html">Reports</a></li>
+                </ul>
+            </nav>
+            <div class="user-actions">
+                <a href="#" class="icon-bell">🔔</a>
+                <a href="#" class="sign-in">Admin Name</a>
+                <button class="get-started">Logout</button>
+            </div>
+        </div>
+    </header>
+
+    <main class="locations-page-content">
+        <div class="container">
+            <h2>🌍 Live Geospatial Issue Map</h2>
+            
+            <div class="map-controls">
+                <select id="map-filter">
+                    <option value="all">Show All Issues (Pending & Resolved)</option>
+                    <option value="pending">Show Only Pending Issues</option>
+                    <option value="resolved">Show Only Resolved Issues</option>
+                </select>
+                <button class="btn primary-btn" id="recenter-map">Recenter to India</button>
+            </div>
+
+            <div id="full-map-container" style="height: 75vh; width: 100%;"></div>
+            
+        </div>
+    </main>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2023 UrbanCare. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"
+     integrity="sha256-20n6a32H62+4wI4sXhQd9hYf8u8e34B7yT8tXqjD4p4="
+     crossorigin=""></script>
+    <script src="locations.js"></script>
+</body>
+</html>
