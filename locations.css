@@ -1,0 +1,37 @@
+/* General Layout & Background (Locations) */
+* { margin: 0; padding: 0; box-sizing: border-box; }
+body {
+    font-family: 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+    line-height: 1.6;
+    background-color: #e6f0ff;
+    color: #333;
+}
+.container { width: 90%; max-width: 1300px; margin: 0 auto; }
+
+/* Navbar (reused dark style) */
+.navbar { background-color: rgba(20, 40, 60, 0.95); padding: 1rem 0; box-shadow: 0 4px 8px rgba(0,0,0,0.4); position: sticky; top: 0; z-index: 1000; }
+.navbar .container { display: flex; justify-content: space-between; align-items: center; }
+.logo { font-size: 1.8rem; font-weight: 700; color: #fff; }
+.nav-links ul { list-style: none; display: flex; }
+.nav-links ul li a { color: #ccc; text-decoration: none; font-weight: 500; padding: 5px 15px; transition: color 0.3s, border-bottom 0.3s; }
+.nav-links ul li a:hover, .nav-links ul li a.active-link { color: #007bff; border-bottom: 3px solid #007bff; }
+.icon-bell { font-size: 1.2rem; color: #ffc107; margin-right: 15px; text-decoration: none; }
+.sign-in { color: #fff; margin-right: 15px; font-weight: 500; text-decoration: none; }
+.get-started { background-color: #dc3545; color: #fff; padding: 8px 18px; border-radius: 5px; border: none; cursor: pointer; }
+
+/* Main Content */
+.locations-page-content { padding: 40px 0; background-color: #fff; box-shadow: 0 0 20px rgba(0,0,0,0.1); }
+.locations-page-content h2 { text-align: center; color: #007bff; margin-bottom: 25px; }
+
+/* Map Controls */
+.map-controls { display: flex; justify-content: center; gap: 15px; margin-bottom: 20px; }
+.map-controls select, .map-controls button { padding: 10px 15px; border-radius: 5px; font-size: 1rem; }
+.btn { padding: 10px 15px; border-radius: 5px; font-weight: 500; cursor: pointer; border: none; transition: background-color 0.3s ease; }
+.primary-btn { background-color: #007bff; color: #fff; }
+.secondary-btn { background-color: #6c757d; color: #fff; }
+
+/* Map Container */
+#full-map-container { border: 3px solid #007bff; border-radius: 8px; box-shadow: 0 4px 10px rgba(0,0,0,0.1); }
+
+/* Footer */
+footer { background-color: rgba(20, 40, 60, 0.95); color: #ccc; text-align: center; padding: 20px 0; }
