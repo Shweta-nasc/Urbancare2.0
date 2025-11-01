@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>UrbanCare - Admin Dashboard</title>
+    <link rel="stylesheet" href="dashboard.css"> 
+    
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"
+     integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY="
+     crossorigin=""/>
+</head>
+<body>
+    <header class="navbar">
+        <div class="container">
+            <div class="logo">UrbanCare Admin</div>
+            <nav class="nav-links">
+                <ul>
+                    <li><a href="index.html" class="active-link">Dashboard</a></li>
+                    <li><a href="pending_issues.html">Pending Issues</a></li>
+                    <li><a href="resolved_issues.html">Resolved Issues</a></li> 
+                    <li><a href="locations.html">Locations</a></li>
+                    <li><a href="reports.html">Reports</a></li>
+                </ul>
+            </nav>
+            <div class="user-actions">
+                <a href="#" class="icon-bell">🔔</a> <a href="#" class="sign-in">Admin Name</a>
+                <button class="get-started">Logout</button>
+            </div>
+        </div>
+    </header>
+
+    <main class="hero-section">
+        <div class="container">
+            <h1>Government Portal: Manage Community Issues</h1>
+            <p>Monitor, track, and resolve urban issues efficiently across all locations.</p>
+            <div class="cta-buttons">
+                <a href="pending_issues.html" class="btn primary-btn">View Pending Issues <span class="arrow">&rarr;</span></a>
+                <a href="resolved_issues.html" class="btn secondary-btn">View Resolved Issues</a>
+            </div>
+            <div class="stats-overview">
+                <div class="stat-card">
+                    <h3 id="pending-count">250</h3>
+                    <p>Total Pending Issues</p>
+                </div>
+                <div class="stat-card">
+                    <h3 id="resolved-count">1200</h3>
+                    <p>Total Resolved Issues</p>
+                </div>
+                <div class="stat-card">
+                    <h3 id="active-locations-count">45</h3>
+                    <p>Active Locations</p>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <section class="featured-issues">
+        <div class="container">
+            <h2>Issues by Location</h2>
+            <div class="location-filters">
+                <select name="location-filter" id="location-filter">
+                    <option value="">All Locations</option>
+                    <option value="downtown">Downtown</option>
+                    <option value="north-side">North Side</option>
+                    <option value="south-east">South East</option>
+                </select>
+                <button class="btn filter-btn">Filter</button>
+            </div>
+            
+            <section class="map-section">
+                <h2>Issue Location Overview</h2>
+                <div id="mapid" style="height: 500px; width: 100%;"></div>
+            </section>
+            
+            <h2 style="margin-top: 40px;">Recent Activity</h2>
+            <div class="issue-list">
+                </div>
+            
+            <div class="view-all">
+                <a href="pending_issues.html">View All Pending Issues <span class="arrow">&rarr;</span></a>
+            </div>
+        </div>
+    </section>
+
+    <section class="impact showcase">
+        <div class="container">
+            <h2 class="animate-on-scroll fade-in-up">Explore Our Impact</h2>
+            <p class="animate-on-scroll fade-in-up delay-1">See how UrbanCare is transforming communities.</p>
+
+            <div class="animated-grid">
+                <div class="hh2">
+                    <img src="static/cleanpark.png" alt="Clean City Park">
+                    <div class="box-overlay">
+                        <h3>Clean Parks Initiative</h3>
+                        <p>Our efforts resulted in 20+ revitalized parks.</p>
+                    </div>
+                </div>
+                <div class="hh2">
+                    <img src="static/pothholeredemption.png" alt="Street Repair">
+                    <div class="box-overlay">
+                        <h3>Pothole Remediation</h3>
+                        <p>Over 1000 potholes fixed across the city.</p>
+                    </div>
+                </div>
+                <div class="hh2">
+                    <img src="static/greencity.png" alt="Community Tree Planting">
+                    <div class="box-overlay">
+                        <h3>Green City Project</h3>
+                        <p>Engaging citizens in tree planting for a greener tomorrow.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <footer>
+        <div class="container">
+            <p>&copy; 2023 UrbanCare. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"
+     integrity="sha256-20n6a32H62+4wI4sXhQd9hYf8u8e34B7yT8tXqjD4p4="
+     crossorigin=""></script>
+    <script src="dashboard.js"></script> 
+</body>
+</html>
